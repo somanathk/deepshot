@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 280px;
+      padding: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 13px;
+      color: #333;
+    }
+    h3 { margin: 0 0 10px; font-size: 14px; }
+    .format-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .format-btn {
+      flex: 1;
+      padding: 6px 0;
+      border: 2px solid #e5e7eb;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      color: #555;
+      transition: all 0.15s;
+    }
+    .format-btn.active {
+      border-color: #2563eb;
+      color: #2563eb;
+      background: #eff6ff;
+    }
+    .format-btn:hover { border-color: #93c5fd; }
+    button.capture {
+      width: 100%;
+      padding: 10px;
+      margin: 4px 0;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    #captureExpanded {
+      background: #2563eb;
+      color: white;
+    }
+    #captureExpanded:hover { background: #1d4ed8; }
+    #captureNormal {
+      background: #e5e7eb;
+      color: #333;
+    }
+    #captureNormal:hover { background: #d1d5db; }
+    #captureSelection {
+      background: #7c3aed;
+      color: white;
+    }
+    #captureSelection:hover { background: #6d28d9; }
+    #status {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+      min-height: 16px;
+    }
+    .section-label {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .info {
+      margin-top: 8px;
+      padding: 8px;
+      background: #f0f7ff;
+      border-radius: 4px;
+      font-size: 11px;
+      color: #555;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <h3>DeepShot</h3>
+  <div class="section-label">Output format</div>
+  <div class="format-row">
+    <button class="format-btn active" data-format="png">PNG</button>
+    <button class="format-btn" data-format="pdf">PDF</button>
+    <button class="format-btn" data-format="md">Markdown</button>
+  </div>
+  <button class="capture" id="captureExpanded">Capture (Expand Scrolls)</button>
+  <button class="capture" id="captureNormal">Capture (Normal)</button>
+  <button class="capture" id="captureSelection">Select Region</button>
+  <div id="status"></div>
+  <div class="info">
+    "Expand Scrolls" detects nested scrollable areas (tables, lists), scrolls through them capturing each section, and stitches the full content into one image. "Select Region" lets you drag a box over the page and captures just that area (inner scrollables inside the box are expanded too).
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
