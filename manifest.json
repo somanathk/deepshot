@@ -3,6 +3,8 @@
   "name": "DeepShot",
   "version": "1.1",
   "description": "Captures full-page screenshots of nested scrollables, with PDF and Markdown export (tables & grids preserved).",
+  "author": "Somanath Reddy",
+  "homepage_url": "https://github.com/somanathk/deepshot",
   "permissions": ["activeTab", "scripting", "downloads"],
   "background": {
     "service_worker": "background.js"
